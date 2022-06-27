@@ -1,0 +1,16 @@
+{
+  "name": "starter-parcel-html-scss",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Alkor5419/starter-parcel-html-scss.git",
+  "author": "Telazhevich Artur <artur_z62@mail.ru>",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.53.0"
+  },
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  }
+}
