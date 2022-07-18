@@ -1,7 +1,77 @@
 @import "./normalize.scss";
 
-$red: red;
-
+:root {
+  --line-border-fill: #3498db;
+}
 body {
-  background: $red;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 350px;
+  max-width: 100%;
+  margin-bottom: 30px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 5px;
+    z-index: -2;
+    background-color: rgb(208, 205, 198);
+  }
+}
+.step {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid rgb(208, 205, 198);
+  &.active {
+    border: 2px solid var(--line-border-fill);
+  }
+}
+.progress {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 0%;
+  height: 5px;
+  z-index: -1;
+  background-color: var(--line-border-fill);
+}
+
+.btn {
+  background-color: var(--line-border-fill);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 30px;
+  margin: 5px;
+  cursor: pointer;
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &:disabled {
+    background-color: rgb(208, 205, 198);
+    cursor: not-allowed;
+  }
 }
